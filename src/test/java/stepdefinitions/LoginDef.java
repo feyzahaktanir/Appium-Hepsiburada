@@ -1,6 +1,8 @@
 package stepdefinitions;
 
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
 import pages.HomePage;
@@ -18,11 +20,13 @@ public class LoginDef {
     @Given("User verifies that she is on the homepage.")
     public void user_verifies_that_she_is_on_the_homepage() {
         homePage.wait(10);
-        homePage.permissionAllow.click();
+        if(homePage.permissionAllow.isDisplayed()){
+        homePage.permissionAllow.click();}
         homePage.wait(5);
+        if (homePage.adFullsize.isDisplayed()){
         Assert.assertTrue(homePage.adFullsize.isDisplayed());
         homePage.wait(3);
-        homePage.adFullsize_close.click();
+        homePage.adFullsize_close.click();}
         homePage.wait(3);
         Assert.assertTrue(homePage.homepageLogo.isDisplayed());
     }
@@ -50,8 +54,10 @@ public class LoginDef {
     @Given("User goes to log in page.")
     public void user_goes_to_log_in_page() {
         homePage.loginButton.click();
+        homePage.wait(3);
         Assert.assertTrue(homePage.guestUser.isDisplayed());
         homePage.loginButton_profilPage.click();
+        homePage.wait(3);
         Assert.assertTrue(homePage.loginTab.isDisplayed());
     }
     @Given("User {string} enters in Username textbox.")
@@ -63,10 +69,12 @@ public class LoginDef {
     }
     @Given("User clicks Giris Yap button in username page.")
     public void user_clicks_giris_yap_button_in_username_page() {
+        homePage.wait(5);
         homePage.usernamePage_loginButton.click();
     }
     @Given("User verifies that wrong username alerts is visible.")
     public void user_verifies_that_wrong_username_alerts_is_visible() {
+        homePage.wait(5);
         Assert.assertTrue(homePage.username_WrongAlert.isDisplayed());
         Assert.assertTrue(homePage.username_WrongAlert2.isDisplayed());
     }
@@ -77,6 +85,7 @@ public class LoginDef {
     }
     @Given("User {string} enters in Password textbox.")
     public void user_enters_in_password_textbox(String string) {
+        homePage.wait(5);
         homePage.password.click();
         homePage.password.clear();
         homePage.password.sendKeys(ConfigReader.getProperty(string));

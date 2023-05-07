@@ -1,18 +1,14 @@
 package stepdefinitions;
 
+import io.appium.java_client.TouchAction;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.asserts.SoftAssert;
 import pages.HomePage;
 import utilities.Driver;
 
-import java.time.Duration;
-
-import static utilities.Driver.wait;
-
 public class GeneralDef {
     HomePage homePage = new HomePage();
+
     @Given("User allows permissions.")
     public void user_allows_permissions() {
         homePage.permissionAllow.click();

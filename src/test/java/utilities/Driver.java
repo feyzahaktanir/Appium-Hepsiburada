@@ -3,6 +3,7 @@ package utilities;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,7 +17,7 @@ public class Driver {
     public Driver(){}
     public static AndroidDriver driver;
     public static WebDriverWait wait;
-    public static SearchContext getDriver() {
+    public static WebDriver getDriver() {
         DesiredCapabilities cap = new DesiredCapabilities();
 
         cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 4 API 31");
@@ -26,7 +27,8 @@ public class Driver {
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         cap.setCapability("udid","emulator-5554");
         cap.setCapability("skipUnlock",true);
-        cap.setCapability("noReset",false);
+        //cap.setCapability("noReset",false);
+        cap.setCapability("fullReset",true);
         cap.setCapability("enableMultiWindows", true);
         //System.out.println(driver.getPageSource());
 

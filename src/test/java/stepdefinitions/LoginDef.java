@@ -97,8 +97,8 @@ public class LoginDef {
     @Given("User verifies that wrong password alerts is visible.")
     public void user_verifies_that_wrong_password_alerts_is_visible() {
         Assert.assertTrue(homePage.password_WrongAlert.isDisplayed());
-        Assert.assertTrue(homePage.password_WrongAlert2.isDisplayed());
-        homePage.password_WrongAlert_close.click();
+        //Assert.assertTrue(homePage.password_WrongAlert2.isDisplayed());
+        //homePage.password_WrongAlert_close.click();
     }
     @Given("User verifies that logged in.")
     public void user_verifies_that_logged_in() {

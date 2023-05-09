@@ -23,7 +23,7 @@ public class Driver {
         cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 4 API 31");
         cap.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
         cap.setCapability(MobileCapabilityType.PLATFORM_VERSION,"12.0");
-        cap.setCapability(MobileCapabilityType.APP,"C:\\Users\\FeyzaPC\\Downloads\\Hepsiburada_5.13.1.apk");
+        cap.setCapability(MobileCapabilityType.APP,"C:\\Users\\FeyzaPC\\Downloads\\Hepsiburada_5.13.1_.apk");
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         cap.setCapability("udid","emulator-5554");
         cap.setCapability("skipUnlock",true);

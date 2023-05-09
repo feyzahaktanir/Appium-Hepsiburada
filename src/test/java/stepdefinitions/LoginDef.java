@@ -102,7 +102,12 @@ public class LoginDef {
     }
     @Given("User verifies that logged in.")
     public void user_verifies_that_logged_in() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertTrue(homePage.accessPopup.isDisplayed());
+        Assert.assertTrue(homePage.accessPopup_title.isDisplayed());
+        Assert.assertTrue(homePage.accessPopup_message.isDisplayed());
+        homePage.accessPopup_OKbutton.click();
+        Assert.assertFalse(homePage.accessPopup.isDisplayed());
+        Assert.assertTrue(homePage.username_profil.isDisplayed());
+        System.out.println("Username: " + homePage.username_profil.getText());
     }
 }

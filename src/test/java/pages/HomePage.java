@@ -62,7 +62,16 @@ public class HomePage {
     @FindBy(xpath = "/hierarchy/android.widget.FrameLayout[3]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[4]/android.view.View/android.view.View/android.view.View/android.widget.Image")
     public WebElement passwordHide;
 
-
+    @FindBy(id = "com.pozitron.hepsiburada:id/parentPanel")
+    public WebElement accessPopup;
+    @FindBy(id = "com.pozitron.hepsiburada:id/title_template")
+    public WebElement accessPopup_title;
+    @FindBy(id = "android:id/message")
+    public WebElement accessPopup_message;
+    @FindBy(id = "android:id/button1")
+    public WebElement accessPopup_OKbutton;
+    @FindBy(id = "com.pozitron.hepsiburada:id/tvUserNameFull")
+    public WebElement username_profil;
     //-----------------------------------------------------------------------------
 
 }

@@ -61,6 +61,8 @@ public class HomePage {
     public WebElement passwordShow;
     @FindBy(xpath = "/hierarchy/android.widget.FrameLayout[3]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[4]/android.view.View/android.view.View/android.view.View/android.widget.Image")
     public WebElement passwordHide;
+
+
     //-----------------------------------------------------------------------------
 
 }

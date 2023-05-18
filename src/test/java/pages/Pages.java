@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class HomePage {
-    public HomePage (){
+public class Pages {
+    public Pages(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(id="com.android.permissioncontroller:id/permission_allow_button")
@@ -73,5 +73,25 @@ public class HomePage {
     @FindBy(id = "com.pozitron.hepsiburada:id/tvUserNameFull")
     public WebElement username_profil;
     //-----------------------------------------------------------------------------
+
+    //Search ----------------------------------------------------------------------
+    @FindBy(id = "com.pozitron.hepsiburada:id/etSearchBox")
+    public WebElement searchBox;
+    @FindBy(xpath = "android.widget.TextView[@resource-id='com.pozitron.hepsiburada:id/search_suggestion_title']")
+    public WebElement search_firstResult;
+//    @FindBy(xpath = "zz")
+//    public WebElement zz;
+//    @FindBy(xpath = "zz")
+//    public WebElement zz;
+//    @FindBy(xpath = "zz")
+//    public WebElement zz;
+//    @FindBy(xpath = "zz")
+//    public WebElement zz;
+//    @FindBy(xpath = "zz")
+//    public WebElement zz;
+
+    //-----------------------------------------------------------------------------
+
+
 
 }

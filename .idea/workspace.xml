@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d62c0e25-8d09-4e58-826f-22546e8d14dc" name="Changes" comment="Project informations updated">
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
+    <list default="true" id="d62c0e25-8d09-4e58-826f-22546e8d14dc" name="Changes" comment="US002 TC04 is completed">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/SearchDef.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/US003_Search.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/appiumhepsiburada/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/appiumhepsiburada/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/Pages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/runner/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runner/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepdefinitions/GeneralDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/GeneralDef.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/stepdefinitions/LoginDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/LoginDef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/US002_Login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/US002_Login.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,15 +48,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="JUnit.Runner">
     <configuration name="Scenario: TC01 - Homepage must be accessible." type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
@@ -148,10 +157,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Runner" />
+        <item itemvalue="Cucumber Java.Scenario: TC04 - User can login successfully with correct user informations." />
         <item itemvalue="Cucumber Java.Scenario: TC02 - User cannot login with wrong username." />
         <item itemvalue="Cucumber Java.Scenario: TC01 - Homepage must be accessible." />
         <item itemvalue="Cucumber Java.Scenario: TC01 - User should be able to access the user login page." />
-        <item itemvalue="Cucumber Java.Scenario: TC04 - User can login successfully with correct user informations." />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +201,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683665707848</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="US002 TC04 is continue">
+      <created>1683666443790</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683666443790</updated>
+    </task>
+    <task id="LOCAL-00006" summary="US002 TC04 is completed">
+      <created>1684436962126</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684436962126</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +234,8 @@
     <MESSAGE value="US002 TC01 is completed." />
     <MESSAGE value="US002 TC03 is completed." />
     <MESSAGE value="Project informations updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project informations updated" />
+    <MESSAGE value="US002 TC04 is continue" />
+    <MESSAGE value="US002 TC04 is completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="US002 TC04 is completed" />
   </component>
 </project>

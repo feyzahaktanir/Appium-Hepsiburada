@@ -1,113 +1,101 @@
 package stepdefinitions;
 
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
-import pages.HomePage;
-import pages.LoginPage;
+import pages.Pages;
 import utilities.ConfigReader;
-import utilities.Driver;
-
-import static utilities.Driver.driver;
 
 public class LoginDef {
 
-    HomePage homePage = new HomePage();
-    //LoginPage loginPage = new LoginPage();
+    Pages pages = new Pages();
 
     @Given("User verifies that she is on the homepage.")
     public void user_verifies_that_she_is_on_the_homepage() {
-        homePage.wait(10);
-        if(homePage.permissionAllow.isDisplayed()){
-        homePage.permissionAllow.click();}
-        homePage.wait(5);
-        if (homePage.adFullsize.isDisplayed()){
-        Assert.assertTrue(homePage.adFullsize.isDisplayed());
-        homePage.wait(3);
-        homePage.adFullsize_close.click();}
-        homePage.wait(3);
-        Assert.assertTrue(homePage.homepageLogo.isDisplayed());
+        pages.wait(10);
+        if(pages.permissionAllow.isDisplayed()){
+        pages.permissionAllow.click();}
+        pages.wait(5);
+        if (pages.adFullsize.isDisplayed()){
+        Assert.assertTrue(pages.adFullsize.isDisplayed());
+        pages.wait(3);
+        pages.adFullsize_close.click();}
+        pages.wait(3);
+        Assert.assertTrue(pages.homepageLogo.isDisplayed());
     }
     @Given("User clicks Profil button in homepage.")
     public void user_clicks_profil_button_in_homepage() {
-        homePage.loginButton.click();
+        pages.loginButton.click();
     }
     @Given("User verifies no login on user login page.")
     public void user_verifies_no_login_on_user_login_page() {
-        Assert.assertTrue(homePage.guestUser.isDisplayed());
+        Assert.assertTrue(pages.guestUser.isDisplayed());
     }
     @Given("User clicks Giris Yap button in homapage.")
     public void user_clicks_giris_yap_button_in_homapage() {
-        homePage.loginButton_profilPage.click();
+        pages.loginButton_profilPage.click();
     }
     @Given("User verify that Giris Yap Title is visible.")
     public void user_verify_that_giris_yap_title_is_visible() {
-        Assert.assertTrue(homePage.loginTab.isDisplayed());
-    }
-    @Given("User closes the browser.")
-    public void user_closes_the_browser() {
-        Driver.quitDriver();
+        Assert.assertTrue(pages.loginTab.isDisplayed());
     }
 
     @Given("User goes to log in page.")
     public void user_goes_to_log_in_page() {
-        homePage.loginButton.click();
-        homePage.wait(3);
-        Assert.assertTrue(homePage.guestUser.isDisplayed());
-        homePage.loginButton_profilPage.click();
-        homePage.wait(10);
-        Assert.assertTrue(homePage.loginTab.isDisplayed());
+        pages.loginButton.click();
+        pages.wait(3);
+        Assert.assertTrue(pages.guestUser.isDisplayed());
+        pages.loginButton_profilPage.click();
+        pages.wait(10);
+        Assert.assertTrue(pages.loginTab.isDisplayed());
     }
     @Given("User {string} enters in Username textbox.")
     public void user_enters_in_username_textbox(String string) {
-        homePage.wait(5);
-        homePage.username.click();
-        homePage.username.clear();
-        homePage.username.sendKeys(ConfigReader.getProperty(string));
+        pages.wait(5);
+        pages.username.click();
+        pages.username.clear();
+        pages.username.sendKeys(ConfigReader.getProperty(string));
     }
     @Given("User clicks Giris Yap button in username page.")
     public void user_clicks_giris_yap_button_in_username_page() {
-        homePage.wait(5);
-        homePage.usernamePage_loginButton.click();
+        pages.wait(5);
+        pages.usernamePage_loginButton.click();
     }
     @Given("User verifies that wrong username alerts is visible.")
     public void user_verifies_that_wrong_username_alerts_is_visible() {
-        homePage.wait(5);
-        Assert.assertTrue(homePage.username_WrongAlert.isDisplayed());
-        Assert.assertTrue(homePage.username_WrongAlert2.isDisplayed());
+        pages.wait(5);
+        Assert.assertTrue(pages.username_WrongAlert.isDisplayed());
+        Assert.assertTrue(pages.username_WrongAlert2.isDisplayed());
     }
     @Given("User verifies that Password page is visible.")
     public void user_verifies_that_password_page_is_visible() {
-        Assert.assertTrue(homePage.passwordPage_WelcomeText.isDisplayed());
-        Assert.assertTrue(homePage.passwordPage_MailText.isDisplayed());
+        Assert.assertTrue(pages.passwordPage_WelcomeText.isDisplayed());
+        Assert.assertTrue(pages.passwordPage_MailText.isDisplayed());
     }
     @Given("User {string} enters in Password textbox.")
     public void user_enters_in_password_textbox(String string) {
-        homePage.wait(5);
-        homePage.password.click();
-        homePage.password.clear();
-        homePage.password.sendKeys(ConfigReader.getProperty(string));
+        pages.wait(5);
+        pages.password.click();
+        pages.password.clear();
+        pages.password.sendKeys(ConfigReader.getProperty(string));
     }
     @Given("User clicks Giris Yap button in password page.")
     public void user_clicks_giris_yap_button_in_password_page() {
-        homePage.passwordPage_loginButton.click();
-        homePage.wait(10);
+        pages.passwordPage_loginButton.click();
+        pages.wait(10);
     }
     @Given("User verifies that wrong password alerts is visible.")
     public void user_verifies_that_wrong_password_alerts_is_visible() {
-        Assert.assertTrue(homePage.password_WrongAlert.isDisplayed());
+        Assert.assertTrue(pages.password_WrongAlert.isDisplayed());
         //Assert.assertTrue(homePage.password_WrongAlert2.isDisplayed());
         //homePage.password_WrongAlert_close.click();
     }
     @Given("User verifies that logged in.")
     public void user_verifies_that_logged_in() {
-        Assert.assertTrue(homePage.accessPopup.isDisplayed());
-        Assert.assertTrue(homePage.accessPopup_title.isDisplayed());
-        Assert.assertTrue(homePage.accessPopup_message.isDisplayed());
-        homePage.accessPopup_OKbutton.click();
-        Assert.assertTrue(homePage.username_profil.isDisplayed());
-        System.out.println("Username: " + homePage.username_profil.getText());
+        Assert.assertTrue(pages.accessPopup.isDisplayed());
+        Assert.assertTrue(pages.accessPopup_title.isDisplayed());
+        Assert.assertTrue(pages.accessPopup_message.isDisplayed());
+        pages.accessPopup_OKbutton.click();
+        Assert.assertTrue(pages.username_profil.isDisplayed());
+        System.out.println("Username: " + pages.username_profil.getText());
     }
 }

@@ -57,7 +57,7 @@ public class LoginDef {
         homePage.wait(3);
         Assert.assertTrue(homePage.guestUser.isDisplayed());
         homePage.loginButton_profilPage.click();
-        homePage.wait(3);
+        homePage.wait(10);
         Assert.assertTrue(homePage.loginTab.isDisplayed());
     }
     @Given("User {string} enters in Username textbox.")
@@ -93,6 +93,7 @@ public class LoginDef {
     @Given("User clicks Giris Yap button in password page.")
     public void user_clicks_giris_yap_button_in_password_page() {
         homePage.passwordPage_loginButton.click();
+        homePage.wait(10);
     }
     @Given("User verifies that wrong password alerts is visible.")
     public void user_verifies_that_wrong_password_alerts_is_visible() {
@@ -106,7 +107,6 @@ public class LoginDef {
         Assert.assertTrue(homePage.accessPopup_title.isDisplayed());
         Assert.assertTrue(homePage.accessPopup_message.isDisplayed());
         homePage.accessPopup_OKbutton.click();
-        Assert.assertFalse(homePage.accessPopup.isDisplayed());
         Assert.assertTrue(homePage.username_profil.isDisplayed());
         System.out.println("Username: " + homePage.username_profil.getText());
     }

@@ -2,12 +2,12 @@ package stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
-import pages.Pages;
+import pages.AndroidPages;
 import utilities.ConfigReader;
 
 public class LoginDef {
 
-    Pages pages = new Pages();
+    AndroidPages pages = new AndroidPages();
 
     @Given("User verifies that she is on the homepage.")
     public void user_verifies_that_she_is_on_the_homepage() {

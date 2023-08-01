@@ -2,32 +2,32 @@ package stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
-import pages.Pages;
-import utilities.Driver;
+import pages.AndroidPages;
+import utilities.DriverManager;
 
 public class GeneralDef {
-    Pages pages = new Pages();
+    AndroidPages androidPages = new AndroidPages();
 
     @Given("User allows permissions.")
     public void user_allows_permissions() {
-        pages.permissionAllow.click();
+        androidPages.permissionAllow.click();
     }
     @Given("User verifies that fullsize advert is visible.")
     public void user_verifies_that_fullsize_advert_is_visible() {
-        pages.wait(15);
-        Assert.assertTrue(pages.adFullsize.isDisplayed());
+        androidPages.wait(15);
+        Assert.assertTrue(androidPages.adFullsize.isDisplayed());
     }
     @Given("User closes fullsize advert.")
     public void user_closes_fullsize_advert() {
-        pages.adFullsize_close.click();
+        androidPages.adFullsize_close.click();
     }
     @Given("User verifies that hepsiburada logo is visible.")
     public void user_verifies_that_hepsiburada_logo_is_visible() {
-        Assert.assertTrue(pages.homepageLogo.isDisplayed());
+        Assert.assertTrue(androidPages.homepageLogo.isDisplayed());
     }
     @Given("User closes the application.")
     public void user_closes_the_application() {
-        Driver.quitDriver();
+        DriverManager.quitDriver();
     }
 
 }

@@ -17,7 +17,7 @@
     <cucumber.version>7.11.2</cucumber.version>
     <cucumber.reporting.version>5.7.5</cucumber.reporting.version>
     <selenium.version>3.141.59</selenium.version>
-    <appium.version>8.3.0</appium.version>
+    <appium.version>8.5.1</appium.version>
     <log4j.version>2.20.0</log4j.version>
     <junit.version>4.13.2</junit.version>
     <webdrivermanager.version>5.3.2</webdrivermanager.version>

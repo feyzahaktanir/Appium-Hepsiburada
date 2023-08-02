@@ -2,51 +2,33 @@ package utilities;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import io.appium.java_client.android.options.UiAutomator2Options;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
     private static AppiumDriver driver;
 
     public static AppiumDriver getDriver() {
-        if (driver == null) {
+        if (driver == null)
+            if (ConfigReader.getProperty("platform").equalsIgnoreCase("android")) {
+                UiAutomator2Options options = new UiAutomator2Options()
+                        .setPlatformName(ConfigReader.getProperty("platformName"))
+                        .setPlatformVersion(ConfigReader.getProperty("platformVersion"))
+                        .setDeviceName(ConfigReader.getProperty("deviceName"))
+                        .setAutomationName("UiAutomator2")
+                        //.setAppPackage(ConfigReader.getProperty("appPackage"))
+                        //.setAppActivity(ConfigReader.getProperty("appActivity"))
+                        .setApp(ConfigReader.getProperty("app"))
+                        .setUdid(ConfigReader.getProperty("udid"))
+                        .setSkipUnlock(Boolean.parseBoolean(ConfigReader.getProperty("skipUnlock")))
+                        .setNoReset(Boolean.parseBoolean(ConfigReader.getProperty("noReset")))
+                        .setFullReset(Boolean.parseBoolean(ConfigReader.getProperty("fullReset")));
 
-            DesiredCapabilities cap = new DesiredCapabilities();
-            cap.setCapability(MobileCapabilityType.DEVICE_NAME, ConfigReader.getProperty("deviceName"));
-            cap.setCapability(MobileCapabilityType.PLATFORM_NAME, ConfigReader.getProperty("platformName"));
-            cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, ConfigReader.getProperty("platformVersion"));
-            cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "MobileAutomation");
-            cap.setCapability("app", ConfigReader.getProperty("app"));
-            cap.setCapability("udid",ConfigReader.getProperty("udid"));
-            cap.setCapability("skipUnlock",ConfigReader.getProperty("skipUnlock"));
-            cap.setCapability("noReset",ConfigReader.getProperty("noReset"));
-            cap.setCapability("fullReset",ConfigReader.getProperty("fullReset"));
-            cap.setCapability("enableMultiWindows", ConfigReader.getProperty("enableMultiWindows"));
-
-
-            if (ConfigReader.getProperty("platform").equalsIgnoreCase("ios")) {
-                try {
-                    driver = new IOSDriver(new URL("http://localhost:4723/wd/hub"), cap);
-                } catch (MalformedURLException e) {
-                    throw new RuntimeException(e);
-                }
-            } else if (ConfigReader.getProperty("platform").equalsIgnoreCase("android")) {
-                cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-                cap.setCapability("appPackage", ConfigReader.getProperty("appPackage"));
-                cap.setCapability("appActivity", ConfigReader.getProperty("appActivity"));
-                try {
-                    driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
-                } catch (MalformedURLException e) {
-                    throw new RuntimeException(e);
-                }
+                driver = new AndroidDriver(options);
             }
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        }
+
 //        //for accept alerts
 //        HashMap<String, Object> appAlerts = new HashMap<String, Object>();
 //        appAlerts.put("autoAcceptAlerts", "true"); //to accept all alerts

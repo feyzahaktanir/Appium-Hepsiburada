@@ -1,16 +1,13 @@
 package pages;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import utilities.DriverManager;
 
-import java.time.Duration;
-
 public class AndroidPages {
     public AndroidPages(){
-        PageFactory.initElements(new AppiumFieldDecorator(DriverManager.getDriver(), Duration.ofSeconds(25)),this);
+        PageFactory.initElements(DriverManager.getDriver(),this);
     }
     @AndroidFindBy(id="com.android.permissioncontroller:id/permission_allow_button")
     public WebElement permissionAllow;

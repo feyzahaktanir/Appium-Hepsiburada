@@ -34,6 +34,7 @@ NOTE:
 - **Potential compatibility issues may arise due to different versions of Maven repositories. You can experiment by updating the versions.
   However, keep in mind that each new version contains bug fixes, improvements, and changes. 
   Choosing different versions may lead to errors in different parts of the project.**
+- **There may be changes in ad xpath values due to in-app ad changes.**
 - Make sure you have the necessary environment setup before running the tests.
 - Keep your Appium server and devices/emulators ready.
 - Update the 'configuration.properties' file with accurate information before running tests.

@@ -24,6 +24,7 @@ public class DriverManager {
                         .setSkipUnlock(Boolean.parseBoolean(ConfigReader.getProperty("skipUnlock")))
                         .setNoReset(Boolean.parseBoolean(ConfigReader.getProperty("noReset")))
                         .setFullReset(Boolean.parseBoolean(ConfigReader.getProperty("fullReset")));
+                options.setCapability("enableMultiWindows", Boolean.parseBoolean(ConfigReader.getProperty("enableMultiWindows")));
 
                 driver = new AndroidDriver(options);
             }

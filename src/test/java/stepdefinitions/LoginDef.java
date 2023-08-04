@@ -2,23 +2,29 @@ package stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.AndroidPages;
 import utilities.ConfigReader;
+import utilities.DriverManager;
+
+import java.time.Duration;
 
 public class LoginDef {
 
     AndroidPages pages = new AndroidPages();
+    WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
 
     @Given("User verifies that she is on the homepage.")
     public void user_verifies_that_she_is_on_the_homepage() {
-        pages.wait(10);
+        wait.until(ExpectedConditions.visibilityOf(pages.permissionAllow));
         if(pages.permissionAllow.isDisplayed()){
         pages.permissionAllow.click();}
-        pages.wait(5);
-        if (pages.adFullsize.isDisplayed()){
-        Assert.assertTrue(pages.adFullsize.isDisplayed());
+        wait.until(ExpectedConditions.visibilityOf(pages.ad));
+        if (pages.ad.isDisplayed()){
+        Assert.assertTrue(pages.ad.isDisplayed());
         pages.wait(3);
-        pages.adFullsize_close.click();}
+        pages.ad_close.click();}
         pages.wait(3);
         Assert.assertTrue(pages.homepageLogo.isDisplayed());
     }
@@ -86,8 +92,8 @@ public class LoginDef {
     @Given("User verifies that wrong password alerts is visible.")
     public void user_verifies_that_wrong_password_alerts_is_visible() {
         Assert.assertTrue(pages.password_WrongAlert.isDisplayed());
-        //Assert.assertTrue(homePage.password_WrongAlert2.isDisplayed());
-        //homePage.password_WrongAlert_close.click();
+        //Assert.assertTrue(pages.password_WrongAlert2.isDisplayed());
+        //pages.password_WrongAlert_close.click();
     }
     @Given("User verifies that logged in.")
     public void user_verifies_that_logged_in() {

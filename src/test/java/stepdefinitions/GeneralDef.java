@@ -12,14 +12,14 @@ public class GeneralDef {
     public void user_allows_permissions() {
         androidPages.permissionAllow.click();
     }
-    @Given("User verifies that fullsize advert is visible.")
-    public void user_verifies_that_fullsize_advert_is_visible() {
+    @Given("User verifies that advert is visible.")
+    public void user_verifies_that_advert_is_visible() {
         androidPages.wait(15);
-        Assert.assertTrue(androidPages.adFullsize.isDisplayed());
+        Assert.assertTrue(androidPages.ad.isDisplayed());
     }
-    @Given("User closes fullsize advert.")
-    public void user_closes_fullsize_advert() {
-        androidPages.adFullsize_close.click();
+    @Given("User closes advert.")
+    public void user_closes_advert() {
+        androidPages.ad_close.click();
     }
     @Given("User verifies that hepsiburada logo is visible.")
     public void user_verifies_that_hepsiburada_logo_is_visible() {
